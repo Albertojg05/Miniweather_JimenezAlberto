@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Miniweather_JimenezA</string>
+    <string name="rainy">rainy</string>
+    <string name="sunny">sunny</string>
+    <string name="windy">windy</string>
+    <string name="snowy">snowy</string>
+    <string name="cloudy">cloudy</string>
+    <string name="stormy">stormy</string>
+    <string name="next">Siguiente</string>
 </resources>

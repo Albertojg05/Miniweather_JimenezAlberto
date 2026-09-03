@@ -5,13 +5,13 @@ plugins {
 android {
     namespace = "jimenez.alberto.miniweather_jimeneza"
     compileSdk {
-        version = release(37)
+        version = release(36)
     }
 
     defaultConfig {
         applicationId = "jimenez.alberto.miniweather_jimeneza"
         minSdk = 27
-        targetSdk = 37
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -21,7 +21,7 @@ android {
     buildTypes {
         release {
             optimization {
-                enable = false
+
             }
         }
     }
