@@ -30,4 +30,8 @@ class WeatherService(val context: Context) {
         }
         return Weather(temp,weatherStates[weatherIndex])
     }
+
+    fun getWeather(city: String): Weather {
+        return generateWeather()
+    }
 }
