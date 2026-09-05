@@ -1,5 +1,6 @@
 package jimenez.alberto.miniweather_jimeneza
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -10,7 +11,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import jimenez.alberto.miniweather_jimeneza.domain.weather
 import jimenez.alberto.miniweather_jimeneza.utilities.WeatherService
 
 class CityActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class CityActivity : AppCompatActivity() {
         val nextButton: Button = findViewById<Button>(R.id.btn_save_city)
         val citySelector: Spinner = findViewById<Spinner>(R.id.city_selector)
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spiner_item, service.getCities())
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, service.getCities())
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
 
@@ -44,7 +44,7 @@ class CityActivity : AppCompatActivity() {
                 p2: Int,
                 p3: Long
             ) {
-                TODO("Not yet implemented")
+                citySelected = p0?.getItemAtPosition(p2).toString()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -54,8 +54,10 @@ class CityActivity : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener {
-            val intent = Intet(this, MainActivity::class)putExtra("city",citySelected)
+            val intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("city", citySelected)
+            }
+            startActivity(intent)
         }
-        startActivities(intent)
     }
 }

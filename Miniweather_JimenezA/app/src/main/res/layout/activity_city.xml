@@ -32,7 +32,7 @@
     <Spinner
         android:id="@+id/city_selector"
         android:layout_width="363dp"
-        android:layout_height="8dp"
+        android:layout_height="25dp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

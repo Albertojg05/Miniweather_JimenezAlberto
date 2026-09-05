@@ -2,7 +2,7 @@ package jimenez.alberto.miniweather_jimeneza.utilities
 
 import android.content.Context
 import jimenez.alberto.miniweather_jimeneza.R
-import jimenez.alberto.miniweather_jimeneza.domain.weather
+import jimenez.alberto.miniweather_jimeneza.domain.Weather
 
 class WeatherService(val context: Context) {
     val weatherStates = arrayOf(
@@ -15,10 +15,10 @@ class WeatherService(val context: Context) {
     )
 
     fun getCities():Array<String>{
-        return arrayOf("Cdmx","Londres","Paris","Guadalajara","Ciudad Obregon")
+        return arrayOf("Ciudad de México","Londres","Paris","Guadalajara","Ciudad Obregon")
     }
 
-    private fun genereteWeather(): weather {
+     fun generateWeather(): Weather {
         val temp = (-15..50).random()
 
         var weatherIndex = -1
@@ -28,6 +28,6 @@ class WeatherService(val context: Context) {
             in 19..25 -> weatherIndex = (4..5).random()
             else -> weatherIndex = 5
         }
-        return weather(temp,weatherStates[weatherIndex])
+        return Weather(temp,weatherStates[weatherIndex])
     }
 }
